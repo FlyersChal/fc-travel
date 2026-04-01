@@ -13,7 +13,7 @@ import { ReadingProgress } from "@/components/reading-progress";
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/constants";
 
-const LOCALE = "ko";
+const LOCALE = "en";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -134,7 +134,7 @@ export default async function PostPage({ params }: Props) {
             </FadeIn>
             <div className="mt-3 flex items-center gap-3 text-xs md:text-sm text-muted-foreground">
               <time dateTime={post.created_at}>
-                {new Date(post.created_at).toLocaleDateString("ko-KR")}
+                {new Date(post.created_at).toLocaleDateString("en-US")}
               </time>
               <span className="text-border">|</span>
               <PostViewCount count={post.view_count} />
@@ -221,9 +221,9 @@ export default async function PostPage({ params }: Props) {
         {/* Contact CTA */}
         <section className="border-t border-border mt-8 md:mt-12 pt-6 md:pt-10">
           <div className="rounded-2xl bg-muted/50 border border-border p-6 md:p-10 text-center">
-            <p className="text-lg md:text-xl font-semibold mb-2">기술적 도움이 필요하신가요?</p>
+            <p className="text-lg md:text-xl font-semibold mb-2">Planning a trip to Korea?</p>
             <p className="text-sm text-muted-foreground mb-4">
-              도메인 설정, 서버 구축, 배포 문제 등 — 부담 없이 문의해 주세요.
+              Need help with itinerary, transportation, or local tips? Feel free to reach out.
             </p>
             <a
               href="https://flyerschal.com/contact"
@@ -231,7 +231,7 @@ export default async function PostPage({ params }: Props) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              플라이어스챌에 문의하기
+              Contact Us
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
             </a>
           </div>

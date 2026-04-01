@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useLocale } from "@/lib/i18n";
 
-export default function KoError({
+export default function EnError({
   error,
   unstable_retry,
 }: {

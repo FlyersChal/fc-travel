@@ -18,13 +18,13 @@ export async function generateMetadata({
   const { locale } = await params;
   const titles: Record<string, string> = { ko: "글 목록", en: "Posts", ja: "記事一覧" };
   const descriptions: Record<string, string> = {
-    ko: "플라이어스챨의 모든 글을 확인하세요.",
-    en: "Browse all posts on Flyerschal.",
-    ja: "フライヤースチャルのすべての記事をご覧ください。",
+    ko: "한국 여행 가이드를 확인하세요.",
+    en: "Browse all Korea travel guides.",
+    ja: "韓国旅行ガイドをご覧ください。",
   };
   return {
-    title: titles[locale] || titles.ko,
-    description: descriptions[locale] || descriptions.ko,
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
     alternates: { canonical: `${SITE_URL}${localePath(locale, "/posts")}` },
   };
 }

@@ -13,9 +13,10 @@ import { localePath } from "@/lib/locale-path";
 import type { Category } from "@/types";
 
 const categoryIconMap: Record<string, React.ComponentType<{ style?: React.CSSProperties }>> = {
-  dev: Code,
-  daily: Coffee,
-  tech: Cpu,
+  destinations: Home,
+  food: Coffee,
+  transportation: Code,
+  culture: Cpu,
 };
 
 function useIsDark() {
@@ -31,7 +32,7 @@ function useIsDark() {
   return dark;
 }
 
-export function Header({ categories = [], locale = "ko" }: { categories?: Category[]; locale?: string }) {
+export function Header({ categories = [], locale = "en" }: { categories?: Category[]; locale?: string }) {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const sheetRef = useRef<HTMLDivElement>(null);
@@ -92,7 +93,7 @@ export function Header({ categories = [], locale = "ko" }: { categories?: Catego
       <div className="container mx-auto flex h-14 items-center px-4">
         <Link href={localePath(locale)} className="mr-6 flex items-center space-x-2">
           <span className="text-base font-bold text-foreground">
-            {locale === "ko" ? "플라이어스챌" : "Flyerschal"}
+            {locale === "ko" ? "한국 여행 가이드" : "Visit Korea Guide"}
           </span>
         </Link>
 
@@ -216,7 +217,7 @@ export function Header({ categories = [], locale = "ko" }: { categories?: Catego
                 color: isDark ? "#ffffffcf" : "#37352f",
                 letterSpacing: "-0.01em",
               }}>
-                {locale === "ko" ? "플라이어스챌" : "Flyerschal"}
+                {locale === "ko" ? "한국 여행 가이드" : "Visit Korea Guide"}
               </span>
             </div>
 

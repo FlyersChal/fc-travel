@@ -69,7 +69,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "error.retry": "다시 시도",
     "error.goHome": "홈으로 돌아가기",
     // Footer
-    "footer.copyright": "플라이어스챌",
+    "footer.copyright": "Visit Korea Guide",
     // Share
     "share.share": "공유",
     "share.twitter": "Twitter에 공유",
@@ -91,12 +91,12 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.home": "Home",
     "nav.posts": "Posts",
     "nav.search": "Search",
-    "home.title": "Things Discovered in Daily Life",
-    "home.description": "Stories about technology and everyday life through a developer's eyes.\nA space to share small discoveries and useful insights.",
-    "home.recent": "Recent Stories",
-    "home.recent.desc": "Check out the latest posts.",
-    "home.viewAll": "View all posts",
-    "home.empty": "We're preparing the first story. Please wait a moment!",
+    "home.title": "Your Guide to Korea",
+    "home.description": "Discover the best of Korea — from hidden gems and local food to transportation tips and cultural insights.\nEverything you need for an unforgettable trip.",
+    "home.recent": "Latest Guides",
+    "home.recent.desc": "Check out the latest travel guides.",
+    "home.viewAll": "View all guides",
+    "home.empty": "We're preparing the first travel guide. Please check back soon!",
     "post.views": "Views",
     "post.copyLink": "Copy link",
     "post.copied": "Copied",
@@ -127,7 +127,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "error.description": "A temporary error occurred. Please try again shortly.",
     "error.retry": "Try again",
     "error.goHome": "Go to Home",
-    "footer.copyright": "Flyerschal",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "Share",
     "share.twitter": "Share on Twitter",
     "share.facebook": "Share on Facebook",
@@ -183,7 +183,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "error.description": "一時的なエラーが発生しました。しばらくしてからもう一度お試しください。",
     "error.retry": "もう一度試す",
     "error.goHome": "ホームに戻る",
-    "footer.copyright": "フライヤースチャル",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "共有",
     "share.twitter": "Twitterで共有",
     "share.facebook": "Facebookで共有",
@@ -235,7 +235,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "notFound.goHome": "返回首页",
     "notFound.posts": "文章列表",
     "notFound.search": "搜索",
-    "footer.copyright": "Flyerschal",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "分享",
     "share.twitter": "分享到Twitter",
     "share.facebook": "分享到Facebook",
@@ -287,7 +287,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "notFound.goHome": "Về trang chủ",
     "notFound.posts": "Bài viết",
     "notFound.search": "Tìm kiếm",
-    "footer.copyright": "Flyerschal",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "Chia sẻ",
     "share.twitter": "Chia sẻ lên Twitter",
     "share.facebook": "Chia sẻ lên Facebook",
@@ -339,7 +339,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "notFound.goHome": "กลับหน้าแรก",
     "notFound.posts": "บทความ",
     "notFound.search": "ค้นหา",
-    "footer.copyright": "Flyerschal",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "แชร์",
     "share.twitter": "แชร์บน Twitter",
     "share.facebook": "แชร์บน Facebook",
@@ -371,7 +371,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "theme.toggle": "Cambiar tema",
     "notFound.title": "Página no encontrada", "notFound.description": "La página que busca no existe o ha sido movida.",
     "notFound.goHome": "Ir al inicio", "notFound.posts": "Artículos", "notFound.search": "Buscar",
-    "footer.copyright": "Flyerschal",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "Compartir", "share.twitter": "Compartir en Twitter", "share.facebook": "Compartir en Facebook",
     "share.copyUrl": "Copiar URL", "share.copyPrompt": "Copie la URL:",
     "menu.label": "Menú", "menu.close": "Cerrar",
@@ -399,7 +399,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "theme.toggle": "Changer le thème",
     "notFound.title": "Page introuvable", "notFound.description": "La page demandée n'existe pas ou a été déplacée.",
     "notFound.goHome": "Retour à l'accueil", "notFound.posts": "Articles", "notFound.search": "Rechercher",
-    "footer.copyright": "Flyerschal",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "Partager", "share.twitter": "Partager sur Twitter", "share.facebook": "Partager sur Facebook",
     "share.copyUrl": "Copier l'URL", "share.copyPrompt": "Copiez l'URL :",
     "menu.label": "Menu", "menu.close": "Fermer",
@@ -427,7 +427,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "theme.toggle": "Design wechseln",
     "notFound.title": "Seite nicht gefunden", "notFound.description": "Die angeforderte Seite existiert nicht oder wurde verschoben.",
     "notFound.goHome": "Zur Startseite", "notFound.posts": "Artikel", "notFound.search": "Suche",
-    "footer.copyright": "Flyerschal",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "Teilen", "share.twitter": "Auf Twitter teilen", "share.facebook": "Auf Facebook teilen",
     "share.copyUrl": "URL kopieren", "share.copyPrompt": "URL kopieren:",
     "menu.label": "Menü", "menu.close": "Schließen",
@@ -455,7 +455,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "theme.toggle": "Ganti tema",
     "notFound.title": "Halaman Tidak Ditemukan", "notFound.description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
     "notFound.goHome": "Kembali ke Beranda", "notFound.posts": "Artikel", "notFound.search": "Cari",
-    "footer.copyright": "Flyerschal",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "Bagikan", "share.twitter": "Bagikan di Twitter", "share.facebook": "Bagikan di Facebook",
     "share.copyUrl": "Salin URL", "share.copyPrompt": "Salin URL:",
     "menu.label": "Menu", "menu.close": "Tutup",
@@ -483,7 +483,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "theme.toggle": "थीम बदलें",
     "notFound.title": "पेज नहीं मिला", "notFound.description": "आपका अनुरोधित पेज मौजूद नहीं है या स्थानांतरित कर दिया गया है।",
     "notFound.goHome": "होम पर जाएँ", "notFound.posts": "लेख", "notFound.search": "खोजें",
-    "footer.copyright": "Flyerschal",
+    "footer.copyright": "Visit Korea Guide",
     "share.share": "साझा करें", "share.twitter": "Twitter पर साझा करें", "share.facebook": "Facebook पर साझा करें",
     "share.copyUrl": "URL कॉपी करें", "share.copyPrompt": "URL कॉपी करें:",
     "menu.label": "मेनू", "menu.close": "बंद करें",
@@ -499,7 +499,7 @@ const translations: Record<Locale, Record<string, string>> = {
 
 // --- Store for reactive locale ---
 type Listener = () => void;
-let currentLocale: Locale = "ko";
+let currentLocale: Locale = "en";
 const listeners = new Set<Listener>();
 
 function getSnapshot(): Locale {
@@ -507,7 +507,7 @@ function getSnapshot(): Locale {
 }
 
 function getServerSnapshot(): Locale {
-  return "ko";
+  return "en";
 }
 
 function subscribe(listener: Listener): () => void {
@@ -525,12 +525,12 @@ function setLocale(locale: Locale) {
 }
 
 function detectLocale(): Locale {
-  if (typeof window === "undefined") return "ko";
+  if (typeof window === "undefined") return "en";
   const stored = localStorage.getItem("locale") as Locale | null;
   if (stored && translations[stored]) return stored;
   const browserLang = navigator.language.split("-")[0] as Locale;
   if (translations[browserLang]) return browserLang;
-  return "ko";
+  return "en";
 }
 
 function detectLocaleFromUrl(): Locale | null {
@@ -540,8 +540,8 @@ function detectLocaleFromUrl(): Locale | null {
     const urlLocale = segments[1] as Locale;
     if (translations[urlLocale]) return urlLocale;
   }
-  // No locale prefix in URL means Korean (default locale)
-  return "ko";
+  // No locale prefix in URL means English (default locale)
+  return "en";
 }
 
 // Initialize on first client load
@@ -564,7 +564,7 @@ export function useLocale() {
 
   const t = useCallback(
     (key: string): string => {
-      return translations[locale]?.[key] ?? translations.ko[key] ?? key;
+      return translations[locale]?.[key] ?? translations.en[key] ?? key;
     },
     [locale]
   );

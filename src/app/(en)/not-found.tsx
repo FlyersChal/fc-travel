@@ -1,5 +1,5 @@
 import { NotFoundContent } from "@/components/not-found-content";
 
-export default function KoNotFound() {
+export default function EnNotFound() {
   return <NotFoundContent />;
 }

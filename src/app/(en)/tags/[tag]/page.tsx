@@ -4,7 +4,7 @@ import { TagsPageTitle } from "@/components/post-nav-labels";
 import { Breadcrumb } from "@/components/breadcrumb";
 import type { Metadata } from "next";
 
-const LOCALE = "ko";
+const LOCALE = "en";
 
 interface Props {
   params: Promise<{ tag: string }>;

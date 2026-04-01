@@ -5,8 +5,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "검색",
-  description: "플라이어스챌 글 검색",
+  title: "Search",
+  description: "Search Korea travel guides",
   alternates: { canonical: `${SITE_URL}/search` },
 };
 
@@ -15,7 +15,7 @@ export default function SearchPage() {
     <div className="max-w-3xl mx-auto py-8 space-y-6">
       <Breadcrumb items={[{ label: "breadcrumb.search" }]} />
       <SearchPageTitle />
-      <SearchContent locale="ko" />
+      <SearchContent locale="en" />
     </div>
   );
 }

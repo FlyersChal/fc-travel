@@ -1,7 +1,7 @@
-export const defaultLocale = "ko";
+export const defaultLocale = "en";
 
 export const locales = [
-  "ko", "en", "ja", "zh", "vi", "th", "es", "fr", "de", "id", "hi",
+  "en", "ko", "ja", "zh", "vi", "th", "es", "fr", "de", "id", "hi",
 ] as const;
 
 export type Locale = (typeof locales)[number];

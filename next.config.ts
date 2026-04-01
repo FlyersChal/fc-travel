@@ -11,18 +11,18 @@ const nextConfig: NextConfig = {
       new URL("https://fastly.picsum.photos/**"),
       new URL("https://i.picsum.photos/**"),
       new URL("https://images.unsplash.com/**"),
-      new URL("https://blog.flyerschal.com/uploads/**"),
+      new URL("https://travel.flyerschal.com/uploads/**"),
     ],
   },
   async redirects() {
     return [
       {
-        source: "/ko",
+        source: "/en",
         destination: "/",
         permanent: true,
       },
       {
-        source: "/ko/:path*",
+        source: "/en/:path*",
         destination: "/:path*",
         permanent: true,
       },

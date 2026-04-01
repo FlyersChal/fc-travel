@@ -9,20 +9,20 @@ import type { Category } from "@/types";
 import { SITE_URL } from "@/lib/constants";
 
 const metaByLocale: Record<string, { title: string; description: string; siteName: string }> = {
-  ko: {
-    title: "플라이어스챌 — 개발과 일상 사이, 유용한 정보 블로그",
-    description: "개발, 기술 트렌드, 일상 속 유용한 정보를 나누는 블로그입니다.",
-    siteName: "플라이어스챌",
-  },
   en: {
-    title: "Flyerschal — Useful Insights Between Dev & Life",
-    description: "A blog sharing development, tech trends, and useful everyday insights.",
-    siteName: "Flyerschal",
+    title: "Visit Korea Guide — Your Travel Companion",
+    description: "Discover the best of Korea — destinations, food, transportation, culture tips, and more for foreign visitors.",
+    siteName: "Visit Korea Guide",
+  },
+  ko: {
+    title: "Visit Korea Guide — 한국 여행 가이드",
+    description: "외국인 방문객을 위한 한국 여행 정보 — 명소, 음식, 교통, 문화 팁 등.",
+    siteName: "Visit Korea Guide",
   },
   ja: {
-    title: "フライヤースチャル — 開発と日常の間、役立つ情報ブログ",
-    description: "開発、技術トレンド、日常の役立つ情報を共有するブログです。",
-    siteName: "フライヤースチャル",
+    title: "Visit Korea Guide — 韓国旅行ガイド",
+    description: "外国人旅行者のための韓国ガイド — 観光地、グルメ、交通、文化のヒントなど。",
+    siteName: "Visit Korea Guide",
   },
 };
 
@@ -32,7 +32,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const meta = metaByLocale[locale] || metaByLocale.ko;
+  const meta = metaByLocale[locale] || metaByLocale.en;
   const ogLocaleMap: Record<string, string> = {
     ko: "ko_KR", en: "en_US", ja: "ja_JP", zh: "zh_CN",
     vi: "vi_VN", th: "th_TH", es: "es_ES", fr: "fr_FR",
@@ -47,7 +47,7 @@ export async function generateMetadata({
     description: meta.description,
     openGraph: {
       type: "website",
-      locale: ogLocaleMap[locale] || "ko_KR",
+      locale: ogLocaleMap[locale] || "en_US",
       siteName: meta.siteName,
       description: meta.description,
     },
@@ -59,8 +59,8 @@ export async function generateMetadata({
         "application/rss+xml": "/feed.xml",
       },
       languages: {
-        ko: SITE_URL,
-        en: `${SITE_URL}/en`,
+        en: SITE_URL,
+        ko: `${SITE_URL}/ko`,
         ja: `${SITE_URL}/ja`,
       },
     },

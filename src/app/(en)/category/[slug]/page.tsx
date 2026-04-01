@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/constants";
 import { Breadcrumb } from "@/components/breadcrumb";
 
-const LOCALE = "ko";
+const LOCALE = "en";
 const PER_PAGE = 10;
 
 export async function generateMetadata({

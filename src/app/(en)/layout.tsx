@@ -7,9 +7,9 @@ import type { Category } from "@/types";
 import { SITE_URL } from "@/lib/constants";
 
 const meta = {
-  title: "플라이어스챌 — 개발과 일상 사이, 유용한 정보 블로그",
-  description: "개발, 기술 트렌드, 일상 속 유용한 정보를 나누는 블로그입니다.",
-  siteName: "플라이어스챌",
+  title: "Visit Korea Guide — Your Travel Companion",
+  description: "Discover the best of Korea — destinations, food, transportation, culture tips, and more for foreign visitors.",
+  siteName: "Visit Korea Guide",
 };
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: meta.description,
   openGraph: {
     type: "website",
-    locale: "ko_KR",
+    locale: "en_US",
     siteName: meta.siteName,
     description: meta.description,
   },
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
       "application/rss+xml": "/feed.xml",
     },
     languages: {
-      ko: SITE_URL,
-      en: `${SITE_URL}/en`,
+      en: SITE_URL,
+      ko: `${SITE_URL}/ko`,
       ja: `${SITE_URL}/ja`,
     },
   },
 };
 
-export default async function KoLayout({
+export default async function EnLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -53,11 +53,11 @@ export default async function KoLayout({
 
   return (
     <ThemeProvider>
-      <Header categories={categories} locale="ko" />
+      <Header categories={categories} locale="en" />
       <main className="flex-1 px-4 md:px-6 lg:px-8 py-4">
         {children}
       </main>
-      <Footer locale="ko" />
+      <Footer locale="en" />
     </ThemeProvider>
   );
 }

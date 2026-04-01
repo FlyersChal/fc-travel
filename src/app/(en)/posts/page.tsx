@@ -8,8 +8,8 @@ import { SITE_URL } from "@/lib/constants";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "글 목록",
-  description: "플라이어스챨의 모든 글을 확인하세요.",
+  title: "Travel Guides",
+  description: "Browse all Korea travel guides.",
   alternates: { canonical: `${SITE_URL}/posts` },
 };
 
@@ -19,7 +19,7 @@ export default async function PostsPage() {
   let posts: Awaited<ReturnType<typeof getPosts>>["posts"] = [];
   let count = 0;
   try {
-    const result = await getPosts({ page: 1, perPage: PER_PAGE, published: true, language: "ko" });
+    const result = await getPosts({ page: 1, perPage: PER_PAGE, published: true, language: "en" });
     posts = result.posts;
     count = result.count;
   } catch {
@@ -35,7 +35,7 @@ export default async function PostsPage() {
         initialPosts={posts}
         initialHasMore={hasMore}
         perPage={PER_PAGE}
-        locale="ko"
+        locale="en"
       />
     </div>
   );

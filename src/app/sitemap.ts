@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { SITE_URL } from "@/lib/constants";
 import { localePath } from "@/lib/locale-path";
 
-const supportedLocales = ["ko", "en", "ja"];
+const supportedLocales = ["en", "ko", "ja"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [];
@@ -42,7 +42,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
 
     postEntries = posts.map((post) => ({
-      url: `${SITE_URL}${localePath(post.language || "ko", `/posts/${post.slug}`)}`,
+      url: `${SITE_URL}${localePath(post.language || "en", `/posts/${post.slug}`)}`,
       lastModified: post.updatedAt,
       changeFrequency: "weekly" as const,
       priority: 0.7,
