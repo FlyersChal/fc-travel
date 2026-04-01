@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Notion-style light mode */
+:root {
+  --background: #ffffff;
+  --foreground: #37352f;
+  --card: #ffffff;
+  --card-foreground: #37352f;
+  --popover: #ffffff;
+  --popover-foreground: #37352f;
+  --primary: #2383e2;
+  --primary-foreground: #ffffff;
+  --secondary: #f7f6f3;
+  --secondary-foreground: #37352f;
+  --muted: #f7f6f3;
+  --muted-foreground: #9b9a97;
+  --accent: #f1f1ef;
+  --accent-foreground: #37352f;
+  --destructive: #eb5757;
+  --border: #e9e9e7;
+  --input: #e9e9e7;
+  --ring: #2383e2;
+  --chart-1: #2383e2;
+  --chart-2: #529cca;
+  --chart-3: #6b9fbe;
+  --chart-4: #8aa8b3;
+  --chart-5: #a3b1a7;
+  --radius: 0.375rem;
+  --sidebar: #fbfbfa;
+  --sidebar-foreground: #37352f;
+  --sidebar-primary: #2383e2;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f1ef;
+  --sidebar-accent-foreground: #37352f;
+  --sidebar-border: #e9e9e7;
+  --sidebar-ring: #2383e2;
+}
+
+/* Notion-style dark mode */
+.dark {
+  --background: #191919;
+  --foreground: #e3e2e0;
+  --card: #202020;
+  --card-foreground: #e3e2e0;
+  --popover: #202020;
+  --popover-foreground: #e3e2e0;
+  --primary: #6bb8e8;
+  --primary-foreground: #191919;
+  --secondary: #2f2f2f;
+  --secondary-foreground: #e3e2e0;
+  --muted: #2f2f2f;
+  --muted-foreground: #b0afab;
+  --accent: #2f2f2f;
+  --accent-foreground: #e3e2e0;
+  --destructive: #eb5757;
+  --border: #ffffff1f;
+  --input: #ffffff1a;
+  --ring: #529cca;
+  --chart-1: #529cca;
+  --chart-2: #6b9fbe;
+  --chart-3: #8aa8b3;
+  --chart-4: #a3b1a7;
+  --chart-5: #bdb9a7;
+  --sidebar: #202020;
+  --sidebar-foreground: #e3e2e0;
+  --sidebar-primary: #529cca;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2f2f2f;
+  --sidebar-accent-foreground: #e3e2e0;
+  --sidebar-border: #ffffff14;
+  --sidebar-ring: #529cca;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overscroll-behavior-y: none;
+  }
+  html {
+    @apply font-sans;
+  }
+
+  /* Notion-style prose overrides */
+  .prose {
+    --tw-prose-body: var(--foreground);
+    --tw-prose-headings: var(--foreground);
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    line-height: 1.3;
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    scroll-margin-top: 5rem;
+  }
+  .prose h2 {
+    font-size: 1.75rem; /* 28px — was 20px */
+  }
+  .prose h3 {
+    font-size: 1.375rem; /* 22px — was 16px */
+  }
+  .prose p {
+    margin-bottom: 0.75em;
+  }
+  .prose code {
+    background: var(--muted);
+    padding: 0.125em 0.375em;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+  }
+  .prose pre {
+    background: var(--secondary) !important;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    overflow-x: auto;
+    max-width: 100%;
+    margin-bottom: 1.5em;
+  }
+  .prose pre + pre {
+    margin-top: 1em;
+  }
+  .prose pre code {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.85em;
+    white-space: pre;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.9em;
+    overflow-x: auto;
+    display: block;
+  }
+  .prose thead {
+    border-bottom: 2px solid var(--border);
+  }
+  .prose th {
+    padding: 0.75em 1em;
+    text-align: left;
+    font-weight: 600;
+    color: var(--foreground);
+    background: var(--muted);
+  }
+  .prose td {
+    padding: 0.75em 1em;
+    border-bottom: 1px solid var(--border);
+  }
+  .prose tr:hover {
+    background: var(--muted);
+  }
+  .prose blockquote {
+    border-left: 3px solid var(--border);
+    padding-left: 1rem;
+    color: var(--muted-foreground);
+    font-style: normal;
+  }
+  .prose img {
+    border-radius: 0.375rem;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

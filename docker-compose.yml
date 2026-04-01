@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: blog
+      POSTGRES_USER: prj_blog
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - blog-net
+
+  blog:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    environment:
+      DATABASE_URL: postgresql://prj_blog:${POSTGRES_PASSWORD}@db:5432/blog
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - blog-net
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    env_file:
+      - .env.production
+    depends_on:
+      - blog
+    networks:
+      - blog-net
+
+volumes:
+  pgdata:
+
+networks:
+  blog-net:
+    driver: bridge

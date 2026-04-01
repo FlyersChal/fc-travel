@@ -1,0 +1,94 @@
+generator client {
+  provider      = "prisma-client"
+  output        = "../src/generated/prisma"
+  binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz
+  posts       Post[]
+
+  @@map("categories")
+}
+
+model Post {
+  id              String      @id @default(uuid()) @db.Uuid
+  title           String
+  slug            String
+  content         String
+  contentType     String      @default("markdown") @map("content_type")
+  excerpt         String?
+  coverImage      String?     @map("cover_image")
+  metaTitle       String?     @map("meta_title")
+  metaDescription String?     @map("meta_description")
+  ogImage         String?     @map("og_image")
+  canonicalUrl    String?     @map("canonical_url")
+  noIndex         Boolean     @default(false) @map("no_index")
+  published       Boolean     @default(false)
+  scheduledAt     DateTime?   @map("scheduled_at") @db.Timestamptz
+  categoryId      String?     @map("category_id") @db.Uuid
+  source          String      @default("web")
+  tags            String[]    @default([])
+  language        String      @default("ko") @db.VarChar(5)
+  viewCount       Int         @default(0) @map("view_count")
+  createdAt       DateTime    @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime    @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  category   Category?   @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  images     PostImage[]
+
+  @@index([categoryId], map: "posts_category_id_idx")
+  @@index([published, createdAt(sort: Desc)], map: "posts_published_created_idx")
+  @@unique([slug, language], map: "posts_slug_language_key")
+  @@index([language, published, createdAt(sort: Desc)], map: "posts_language_published_created_idx")
+  @@map("posts")
+}
+
+model Admin {
+  id        String   @id @default(uuid()) @db.Uuid
+  email     String   @unique
+  password  String
+  name      String?
+  avatarUrl String?  @map("avatar_url")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+  apiKeys   ApiKey[]
+
+  @@map("admins")
+}
+
+model ApiKey {
+  id         String    @id @default(uuid()) @db.Uuid
+  name       String
+  keyHash    String    @unique @map("key_hash")
+  adminId    String    @map("admin_id") @db.Uuid
+  lastUsedAt DateTime? @map("last_used_at") @db.Timestamptz
+  expiresAt  DateTime? @map("expires_at") @db.Timestamptz
+  revokedAt  DateTime? @map("revoked_at") @db.Timestamptz
+  createdAt  DateTime  @default(now()) @map("created_at") @db.Timestamptz
+
+  admin Admin @relation(fields: [adminId], references: [id], onDelete: Cascade)
+
+  @@map("api_keys")
+}
+
+model PostImage {
+  id          String   @id @default(uuid()) @db.Uuid
+  postId      String   @map("post_id") @db.Uuid
+  storagePath String   @map("storage_path")
+  altText     String?  @map("alt_text")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@map("post_images")
+}
