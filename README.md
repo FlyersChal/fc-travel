@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Visit Korea Guide
+
+Korea travel blog for foreign visitors. Practical everyday survival tips, not tourist attractions.
+
+## What is this?
+
+A blog platform that helps foreigners navigate daily life in Korea — convenience stores, cafes, restaurants, transportation, and more. Each post includes:
+
+- **Communication Cards**: English / Romanized Korean / Hangul with audio playback
+- **Location Links**: Find nearby stores via Naver Map
+- **Short Videos**: Embedded YouTube Shorts / Instagram Reels
+
+## Tech Stack
+
+- **Frontend**: Next.js 16 + Tailwind CSS
+- **Database**: PostgreSQL + Prisma
+- **Auth**: NextAuth (JWT)
+- **Deploy**: Docker + Nginx
+- **i18n**: English (default), Korean, +9 languages
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Copy environment file
+cp .env.example .env
+# Edit .env with your database credentials
+
+# Generate Prisma client
+npx prisma generate
+
+# Run database migrations
+npx prisma migrate dev
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── (en)/          # Default English routes (no prefix)
+│   ├── [locale]/      # Other language routes (/ko, /ja, etc.)
+│   ├── api/           # API routes
+│   └── admin/         # Admin dashboard
+├── components/        # React components
+├── lib/               # Utilities, auth, i18n, DB
+└── types/             # TypeScript types
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Docker-based deployment with Blue/Green strategy.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Build Docker image
+docker build -t fc-travel .
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run container
+docker run -d --name travel \
+  --env-file .env.production \
+  -p 3000:3000 \
+  fc-travel
+```
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private project.
