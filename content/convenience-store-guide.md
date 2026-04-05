@@ -19,7 +19,7 @@ The largest chain in Korea with 17,000+ stores. Green signage. Known for afforda
 
 한국 최대 편의점 체인, 17,000개 이상 매장. 초록색 간판. 저렴한 도시락, 삼각김밥, 자체 브랜드 과자로 유명합니다.
 
-<!-- 📸 CU 간판 사진 필요 — 직접 촬영 후 교체 -->
+![CU Convenience Store](https://travel.flyerschal.com/uploads/cu-store.jpg)
 
 ### GS25 (지에스25)
 
@@ -27,7 +27,7 @@ Second largest with 17,000+ stores. Sky blue signage. Famous for limited-edition
 
 두 번째로 큰 체인, 17,000개 이상 매장. 하늘색 간판. 한정판 과자, 트렌디한 음료, 한국 브랜드 콜라보로 유명합니다.
 
-<!-- 📸 GS25 간판 사진 필요 — 직접 촬영 후 교체 -->
+![GS25 Convenience Store](https://travel.flyerschal.com/uploads/gs25-store.webp)
 
 ### 7-Eleven (세븐일레븐)
 
@@ -35,7 +35,7 @@ About 11,000 stores across Korea. Green, orange, and red stripes — the global 
 
 한국 전역에 약 11,000개 매장. 초록, 주황, 빨간 줄무늬 — 이미 알고 있는 글로벌 브랜드입니다.
 
-<!-- 📸 7-Eleven 간판 사진 필요 — 직접 촬영 후 교체 -->
+![7-Eleven Convenience Store](https://travel.flyerschal.com/uploads/7eleven-store.jpg)
 
 ---
 
